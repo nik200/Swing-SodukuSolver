@@ -1,24 +1,16 @@
-# Swing-SodukuSolver
+#Sudoku solver
 
-Standalone java applet for solving sudoku puzzles.
+##Overview
+Sudoku Solver is a java based standalone SWT application for solving sudoku puzzles. It uses recursive Backtracking algorithm to solve puzzles of any complexity.
 
-##############################################################
-About
-#############################################################
+##Backtracking algorithm
 
-Sudoku solver is a java Swing application which solves Sudoku puzzles of any complexity. User needs to input the pre-et value and all 
-other blocks gets filled on a click of a button.
-The app supports - 
-- Saving grids to local system
-- Loading the saved grids into the application from local system.
-- Display time taken to solve the puzzle.
+Backtracking is a general algorithm for finding all (or some) solutions to some computational problems, notably constraint satisfaction problems, that incrementally builds candidates to the solutions, and abandons each partial candidate c ("backtracks") as soon as it determines that c cannot possibly be completed to a valid solution.
 
-#############################################################
-Deliverables
-#############################################################
+###Key steps to implement recursive backtracking algorithm for solving suduko puzzle
+ 
+1. Identifying the data structure which best represents the input parameters of the problem and the partial states of it's solution. In Sudoku solver it is a `Grid` class which is composed of a 2D array of bytes to store the partially solved grid and a 3D boolean array which stores the probable candidates for a corresponding empty box in 2D array. Below diagram illustrates a partial state. 
+The memory footprint of this data structure needs to be kept as small as possible as we will have multiple instances of it in stack during recursion calls.
 
-Repository contains -
-- The java eclipse project root folder of the application 
-- Build repository with the latest executable jar
-- readme.txt file
-- gitignore file
+2. Algorithm to derive the next possible (temporary)state which is one step closer to solution. In Soduku solver it is done by choosing a probable and assuming it to be a valid value for a box. Then based on this assumption the probables in the other boxes are recalculated and the process is recursively repeated unless a solution is found OR we end up having a partial state which cannot have any solution, in latter case the call is returned to the method where we made an assumption by choosing a probable and the other candidate probable is chosen.
+
