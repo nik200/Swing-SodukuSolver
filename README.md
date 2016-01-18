@@ -9,9 +9,7 @@ Backtracking is a general algorithm for finding all (or some) solutions to some 
 
 ###Key steps to implement recursive backtracking algorithm for solving suduko puzzle
  
-1. Identifying the data structure which best represents the input parameters of the problem and the partial states of it's solution. In Sudoku solver it is a `Grid` class which is composed of a 2D array of bytes to store the partially solved grid and a 3D boolean array which stores the probable candidates for a corresponding empty box in 2D array. Below diagram illustrates a partial state.
-The memory footprint of this data structure needs to be kept as small as possible as we will have multiple instances of it in stack during recursion calls.
-
+1. Identifying the data structure which best represents the input parameters of the problem and the partial states of it's solution. In Sudoku solver it is a `Grid` class which is composed of a 2D array of bytes to store the partially solved grid and a 3D boolean array which stores the probable candidates for a corresponding empty box in 2D array. Below diagram illustrates a partial state.The memory footprint of this data structure needs to be kept as small as possible as we will have multiple instances of it in stack during recursion calls.
 <img src="https://github.com/nik200/Swing-SodukuSolver/blob/master/img/2D-array.png" width="45%"></img>
 <img src="https://github.com/nik200/Swing-SodukuSolver/blob/master/img/3D-Array.png" width="40%"></img>
 
