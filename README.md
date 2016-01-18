@@ -14,10 +14,10 @@ The memory footprint of this data structure needs to be kept as small as possibl
 
 2. Algorithm to derive the next possible (temporary)state which is one step closer to solution. In Soduku solver it is done by choosing a probable and assuming it to be a valid value for a box. Then based on this assumption the probables in the other boxes are calculated and the process is recurred unless a solution is found OR we end up having a partial state which cannot have any solution, in latter case the call is returned to the method where we made an assumption by choosing a probable and the other candidate probable is chosen.
 
-#GUI
+##GUI
 
 Sudoku solver is a java Swing application. With simple interface to accept preset values and then solve the grid. User can save the grid data and store the grid data to a .grid file which is a serialized object dump of `Grid` class object. 
 
-#Future Scope
+##Future Scope
 
 Implementing generic interfaces for backtracking algorithm to use with any data model which can model the initial and intermediate states of a puzzle eligible to be solved with recursive backtracking algorithm.
